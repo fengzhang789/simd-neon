@@ -1,5 +1,5 @@
-// ARM64 GCC -03 output: https://godbolt.org/z/Yvaqo1G5a
-// ARM64 GCC -00 output: https://godbolt.org/z/zr3bKhhc8
+// ARM64 GCC -03 output: https://godbolt.org/z/dPrPbevdW
+// ARM64 GCC -00 output: https://godbolt.org/z/sozcsqb9c
 
 #include <random>
 #include <chrono>
@@ -30,7 +30,7 @@ int main() {
     long long sum = 0;
     for (int rep=0; rep<N; rep++) {
         do_not_optimize(&A[0]);                     // force re-read of array at each step
-        long long s = 0;
+        int s = 0;
         for (int i=0; i<N; i++) {
             s += A[i];
         }
